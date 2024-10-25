@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e8dc04ed667e48789e8f0c6f2c3073a2" Name="Diagram1">
+        <EntityTypeShape EntityType="ShopModel.Category" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.City" Width="1.5" PointX="1.5" PointY="24.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.Indexes" Width="1.5" PointX="1.5" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.Manufacturer" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.Order" Width="1.5" PointX="3" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.OrderProduct" Width="1.5" PointX="5.25" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.OrderStatus" Width="1.5" PointX="0.75" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.PickPoint" Width="1.5" PointX="0.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.Product" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.Producter" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.ProductName" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.Role" Width="1.5" PointX="1.5" PointY="35.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.Street" Width="1.5" PointX="1.5" PointY="29.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.Units" Width="1.5" PointX="0.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ShopModel.User" Width="1.5" PointX="0.75" PointY="32" IsExpanded="true" />
+        <AssociationConnector Association="ShopModel.FK_Product_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_PickPoint_City" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_PickPoint_Indexes" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_Product_Manufacturer" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_Order_OrderStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_Order_PickPoint" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_Order_User" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_OrderProduct_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_OrderProduct_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_PickPoint_Street" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_Product_Producter" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_Product_ProductName" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_Product_Units" ManuallyRouted="false" />
+        <AssociationConnector Association="ShopModel.FK_User_Role" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
