@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace PetShopKT.Pages
 {
@@ -32,6 +33,56 @@ namespace PetShopKT.Pages
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
+            {
+                try
+                {
+                    StringBuilder errors = new StringBuilder();
+
+                    if (string.IsNullOrEmpty(LoginTextBox.Text))
+                    {
+                        errors.AppendLine("Заполните логин");
+                    }
+
+                    if (string.IsNullOrEmpty(PasswordBox.Password))
+                    {
+                        errors.AppendLine("Заполните пароль");
+                    }
+
+
+
+
+                    if (Data.ShopEntities.GetContext().User
+                        .Any(d => d.UserLogin == LoginTextBox.Text && d.UserPassword == PasswordBox.Password))
+                    {
+                        var user = Data.ShopEntities.GetContext().User
+                            .FirstOrDefault(d => d.UserLogin == LoginTextBox.Text && d.UserPassword == PasswordBox.Password);
+
+                        switch (user.Role.RoleName)
+                        {
+                            case "Администратор":
+                                Classes.Manager.MainFrame.Navigate(new Pages.AdminPage());
+                                break;
+                            case "Клиент":
+                                Classes.Manager.MainFrame.Navigate(new Pages.ViewProductPage());
+                                break;
+                            case "Менеджер":
+                                Classes.Manager.MainFrame.Navigate(new Pages.ViewProductPage());
+                                break;
+                        }
+
+                        MessageBox.Show("Успех!", "Успех!", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Некорректный логин/пароль", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
 
         }
     }

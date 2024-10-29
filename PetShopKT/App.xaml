@@ -10,6 +10,21 @@
         <Style TargetType="Label">
             <Setter Property="FontFamily" Value="Comic Sans Ms"></Setter>
         </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="FontFamily" Value="Comic Sans MS"></Setter>
+            <Setter Property="Width" Value="300"></Setter>
+            <Setter Property="Height" Value="30"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="center"></Setter>
+        </Style>
+        <Style TargetType="PasswordBox">
+            <Setter Property="FontFamily" Value="Comic Sans MS"></Setter>
+            <Setter Property="Width" Value="300"></Setter>
+            <Setter Property="Height" Value="30"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="center"></Setter>
+        </Style>
+
         <Style TargetType="Button">
             <Setter Property="FontFamily" Value="Comic Sans Ms"></Setter>
             <Setter Property="Height" Value="30"></Setter>

@@ -6,9 +6,78 @@
       xmlns:local="clr-namespace:PetShopKT.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AddEditPage">
+      Title="ИС Товары для животных - добавление/редактирование товара">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+
+
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0"
+              VerticalAlignment="Center"
+              HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="300"></ColumnDefinition>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="300"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="90"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label x:Name="IdLabel" Content="Id:" Grid.Row="0" Grid.Column="0"></Label>
+            <Label Content="Категория:" Grid.Row="0" Grid.Column="0"></Label>
+            <Label Content="Количество на складе:" Grid.Row="1" Grid.Column="0"></Label>
+            <Label Content="Единица измерения:" Grid.Row="2" Grid.Column="0"></Label>
+            <Label Content="Изображение:" Grid.Row="3" Grid.Column="0"></Label>
+
+            <Label Content="Наименование:" Grid.Row="0" Grid.Column="2"></Label>
+            <Label Content="Стоимость за ед.:" Grid.Row="1" Grid.Column="2"></Label>
+            <Label Content="Поставщик:" Grid.Row="2" Grid.Column="2"></Label>
+            <Label Content="Подробное Описание:" Grid.Row="3" Grid.Column="2" Margin="0,10,0,71" Grid.RowSpan="2"></Label>
+
+            <TextBox x:Name="IdTextBox" Grid.Row="0" Grid.Column="1"
+                     IsReadOnly="True" IsEnabled="False"></TextBox>
+            <ComboBox x:Name="CategoryComboBox" Grid.Row="0" Grid.Column="1"
+                      DisplayMemberPath="Name"></ComboBox>
+            <TextBox x:Name="CountTextBox" Grid.Row="1" Grid.Column="1"></TextBox>
+            <TextBox x:Name="UnitTextBox" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top"></TextBox>
+
+            <Image x:Name="ProductImage" Margin="10"
+                   Grid.Row="3" Grid.Column="1" Grid.RowSpan="4"
+                   MouseDown="ProductImage_MouseDown">
+                <Image.Source>
+                    <Binding Path ="ProductPhoto">
+                        <Binding.TargetNullValue>
+                            <BitmapImage UriSource="/Resources/picture.png"/>
+                        </Binding.TargetNullValue>
+                    </Binding>
+                </Image.Source>
+            </Image>
+
+            <TextBox x:Name="NameTextBox" Grid.Row="0" Grid.Column="3" TextChanged="NameTextBox_TextChanged"></TextBox>
+            <TextBox x:Name="CostTextBox" Grid.Row="1" Grid.Column="3"></TextBox>
+            <TextBox x:Name="SupplierTextBox" Grid.Row="2" Grid.Column="3"></TextBox>
+            <!--  <TextBox x:Name="ManufacturerTextBox" Grid.Row="3" Grid.Column="3"></TextBox> -->
+            <TextBox x:Name="DescriptionTextBox" Grid.Row="3" Grid.Column="3" 
+                     Grid.RowSpan="3" Height="226" VerticalScrollBarVisibility="Visible"
+                     TextWrapping="Wrap" AcceptsReturn="True" Margin="0,15,0,0" VerticalAlignment="Top"></TextBox>
+
+        </Grid>
+        <Button x:Name="BackButton" Content="Назад"
+                Click="BackButton_Click" Grid.Row="1"
+                HorizontalAlignment="Left" Margin="10"></Button>
+        <Button x:Name="SaveButton" Content="Сохранить"
+                Click="SaveButton_Click" Grid.Row="1"
+                HorizontalAlignment="Right" Margin="10"></Button>
+
     </Grid>
 </Page>
