@@ -53,8 +53,8 @@ namespace PetShopKT.Pages
                 CategoryComboBox.ItemsSource = Data.ShopEntities.GetContext().Category.ToList();
                 if (FlagAddorEdit == "add")
                 {
-                    IdTextBox.Visibility = Visibility.Hidden;
-                    IdLabel.Visibility = Visibility.Hidden;
+                    IdTextBox.Visibility = Visibility.Visible;
+                    IdLabel.Visibility = Visibility.Visible;
 
                     CategoryComboBox.SelectedItem = null;
                     CountTextBox.Text = string.Empty;

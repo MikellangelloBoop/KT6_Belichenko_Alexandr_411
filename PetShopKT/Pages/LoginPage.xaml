@@ -16,6 +16,12 @@
             <Label Content="Пароль:" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
             <PasswordBox x:Name="PasswordBox" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"></PasswordBox>
 
+            <Image x:Name="CaptchaImage" Width="200" Height="100" Visibility="Collapsed" Margin="10" />
+
+            <TextBox x:Name="CaptchaTextBox" Width="200" Visibility="Collapsed" Margin="5"/>
+
+            <Label x:Name="TimerLabel" Content="" Visibility="Collapsed" HorizontalAlignment="Center" Margin="10" FontWeight="Bold" />
+
             <Button x:Name="LoginButton" Content="Войти"
                     Click="LoginButton_Click" Margin="10"></Button>
             <Button x:Name="GuestButton" Content="Гость"
