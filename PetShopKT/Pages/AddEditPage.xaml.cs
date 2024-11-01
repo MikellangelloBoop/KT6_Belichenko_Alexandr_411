@@ -53,8 +53,8 @@ namespace PetShopKT.Pages
                 CategoryComboBox.ItemsSource = Data.ShopEntities.GetContext().Category.ToList();
                 if (FlagAddorEdit == "add")
                 {
-                    IdTextBox.Visibility = Visibility.Visible;
-                    IdLabel.Visibility = Visibility.Visible;
+                    IdTextBox.Visibility = Visibility.Hidden;
+                    IdLabel.Visibility = Visibility.Hidden;
 
                     CategoryComboBox.SelectedItem = null;
                     CountTextBox.Text = string.Empty;
@@ -68,8 +68,8 @@ namespace PetShopKT.Pages
 
                 else if (FlagAddorEdit == "edit")
                 {
-                    IdTextBox.Visibility = Visibility.Hidden;
-                    IdLabel.Visibility = Visibility.Hidden;
+                    IdTextBox.Visibility = Visibility.Visible;
+                    IdLabel.Visibility = Visibility.Visible;
 
                     CategoryComboBox.SelectedItem = null;
                     CountTextBox.Text = _currentproduct.ProductQuantityInStock.ToString();
@@ -79,7 +79,7 @@ namespace PetShopKT.Pages
                     SupplierTextBox.Text = _currentproduct.ProductName.Name;
                     DescriptionTextBox.Text = _currentproduct.ProductDescription;
 
-                    IdTextBox.Text = Data.ShopEntities.GetContext().Product.Max(d => d.Id + 1).ToString();
+                    IdTextBox.Text = _currentproduct.Id.ToString();
                     CategoryComboBox.SelectedItem = Data.ShopEntities.GetContext().Category.Where(d => d.Id == _currentproduct.IdProductCategory).FirstOrDefault();
                     if (_currentproduct.ProductPhoto != null && _currentproduct.ProductPhoto.Length > 0)
                     {
